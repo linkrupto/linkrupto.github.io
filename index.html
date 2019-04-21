@@ -2,14 +2,23 @@
 
 
 
+
+
+
+
+
+
+
+
+
   
 
 
-<html class="theme-next mist use-motion" lang="zh-Hans,en">
+<html class="theme-next muse use-motion" lang="zh-Hans,en">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +29,6 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -37,38 +44,21 @@
 
 
 
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
-
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
 
 
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
 
 
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
 
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
 
 
 
@@ -76,33 +66,20 @@
 
 
 
-
-
-
-<meta property="og:type" content="website">
-<meta property="og:title" content="Pseudorandom Bits">
-<meta property="og:url" content="https://hzhspace.github.io/index.html">
-<meta property="og:site_name" content="Pseudorandom Bits">
-<meta property="og:locale" content="zh-Hans,en">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pseudorandom Bits">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
+    scheme: 'Muse',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
     algolia: {
       applicationID: '',
       apiKey: '',
@@ -114,12 +91,34 @@
 </script>
 
 
+  
 
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Pseudorandom Bits">
+<meta property="og:url" content="https://hzhspace.github.io/index.html">
+<meta property="og:site_name" content="Pseudorandom Bits">
+<meta property="og:locale" content="zh-Hans,en">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pseudorandom Bits">
+
+
+
+
+
+  
+  
   <link rel="canonical" href="https://hzhspace.github.io/">
 
 
 
-
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
 
   <title>Pseudorandom Bits</title>
   
@@ -130,6 +129,35 @@
 
 
 
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
 
 </head>
 
@@ -146,7 +174,7 @@
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta">
     
 
     <div class="custom-logo-site-title">
@@ -156,13 +184,12 @@
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
+    
+    
   </div>
 
   <div class="site-nav-toggle">
-    <button>
+    <button aria-label="Cambiar a barra de navegación">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -170,45 +197,55 @@
   </div>
 </div>
 
-<nav class="site-nav">
-  
 
+
+<nav class="site-nav">
   
     <ul id="menu" class="menu">
       
         
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
-            
-            Home
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
-            
-            Categories
-          </a>
-        </li>
-      
         
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
-            
-            About
-          </a>
-        </li>
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
       
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Inicio</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archivo</a>
+
+  </li>
 
       
+      
     </ul>
+  
+
+  
+    
+
   
 
   
@@ -216,12 +253,20 @@
 
 
 
- </div>
+  
+
+
+
+</div>
     </header>
+
+    
+
 
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
+          
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
@@ -232,6 +277,166 @@
 
   
   
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzhspace.github.io/2019/04/16/20190416/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hui Zhuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pseudorandom Bits">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/16/20190416/" class="post-title-link" itemprop="url">生日快乐！</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Publicado el</span>
+              
+
+              
+                
+              
+
+              <time title="Creado por: 2019-04-16 10:33:09" itemprop="dateCreated datePublished" datetime="2019-04-16T10:33:09+08:00">2019-04-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Editado el</span>
+                
+                <time title="Modificado por: 2019-04-17 12:03:24" itemprop="dateModified" datetime="2019-04-17T12:03:24+08:00">2019-04-17</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>很多人谈喜欢的人事物，离不开“难得”二字。难得，并不只是因为稀少而珍贵，总还有些是因为“难”才少的意思。所以，完成了一件比较“难”的事，会得到尊敬和认可和喜爱。普遍觉得“难”的事有哪些呢？大概有“坚持积极向上”（向上，是向哪？大众标准？）。</p>
+<p>我们好像喜欢说通透、聪明，但这些到底是什么意思？好像是想表达，我们看到对方身上的一种安顿自己和外界？因为访谈，采访者抛出问题，可能是大众普遍会发出的或存在的，问题本身有可研究性，而回答问题的人，其实无论作何回答，只要没有回避，好像都会被认为是通透。（“稍微绕一下坑”）但很多人其实回避或“绕坑”的方法都是很“聪明的”，我是觉得聪明应该是形容这些人的，它就是“表面上很漂亮”？这个大众口中“通透”和“非通透”的区别在哪？其实就是搞清楚，通透这个词描述的是什么。</p>
+<p>我刚看了SHOUP的主页，我说我喜欢这个样子，只放自己干了什么事，且都是对别人有用的，写了两本书，还是免费的，如果愿意捐助可以捐助。他特别有钱吗？肯定不是。我从那得到的东西太多了，我占了便宜的。我希望成为这样的人，他反应出来的样貌就是，简单（因为没啥大新闻名气太多事），但是每个东西都很扎实（可能是应为涉及的是基础领域？质量怎样有待观察）</p>
+<p>我喜欢Huijia Lin的博士论文，开篇清晰明了，就两个问题？这就是做基础的好处，问题清晰简单</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -258,25 +463,51 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/09/20190409/" itemprop="url">恐慌</a></h1>
+                
+                <a href="/2019/04/09/20190409/" class="post-title-link" itemprop="url">恐慌</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Publicado el</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-09T10:21:09+08:00">
-                2019-04-09
-              </time>
+
+              
+                
+              
+
+              <time title="Creado por: 2019-04-09 10:21:09" itemprop="dateCreated datePublished" datetime="2019-04-09T10:21:09+08:00">2019-04-09</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Editado el</span>
+                
+                <time title="Modificado por: 2019-04-15 14:04:53" itemprop="dateModified" datetime="2019-04-15T14:04:53+08:00">2019-04-15</time>
+              
             
           </span>
 
@@ -284,15 +515,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/09/20190409/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/09/20190409/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -320,25 +542,24 @@
       
         
           
-          其实就是把自己感觉不对的地方说给自己听。
+            <p>其实就是把自己感觉不对的地方说给自己听。</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/09/20190409/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -369,6 +590,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -395,25 +618,51 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/04/20190404/" itemprop="url">思考的局限与不思考的愚昧</a></h1>
+                
+                <a href="/2019/04/04/20190404/" class="post-title-link" itemprop="url">思考的局限与不思考的愚昧</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Publicado el</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-04T11:26:42+08:00">
-                2019-04-04
-              </time>
+
+              
+                
+              
+
+              <time title="Creado por: 2019-04-04 11:26:42" itemprop="dateCreated datePublished" datetime="2019-04-04T11:26:42+08:00">2019-04-04</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Editado el</span>
+                
+                <time title="Modificado por: 2019-04-15 13:39:38" itemprop="dateModified" datetime="2019-04-15T13:39:38+08:00">2019-04-15</time>
+              
             
           </span>
 
@@ -421,15 +670,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/04/20190404/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/04/20190404/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -457,24 +697,30 @@
       
         
           
-          未经思考的文字骗不了别人，却容易把自己骗了。流俗的、大众的、权威的术语、主义、旗帜、思想并不都未经思考，得看是从什么样的嘴里出来的。让未经思考的人意识到自己未经思考是困难的吗？由此，诚实是由内而发还是由外而发，我多相信于后者。并非谎言就是由内，诚实和谎言都是由人与人的交互而来，只存在于外。未经思考和
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/04/20190404/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>未经思考的文字骗不了别人，却容易把自己骗了。流俗的、大众的、权威的术语、主义、旗帜、思想并不都未经思考，得看是从什么样的嘴里出来的。<br>让未经思考的人意识到自己未经思考是困难的吗？由此，诚实是由内而发还是由外而发，我多相信于后者。并非谎言就是由内，诚实和谎言都是由人与人的交互而来，只存在于外。未经思考和自欺只是没有自我意识，并非不诚实。思考也有思考局限，但这与不思考的愚昧应有本质不同。人的脑力究竟探究到如何，本身就让人好奇。</p>
+<p>《庄子》里的论证方法</p>
+<p>且夫水之积也不厚，则负大舟也无力。覆杯水于坳堂之上，则芥为之舟；置杯焉则胶，水浅而舟大也。</p>
+<p>登高望远的感觉确实很好，可能不仅是脱离，也确有俯视</p>
+<p>三月聚粮</p>
+<p>绝云气，负青天</p>
+<p>世味尝来浑是蜡，莫教开口向人啼</p>
+
+          
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -505,6 +751,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -531,25 +779,51 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/03/20190403/" itemprop="url">二手市场初体验</a></h1>
+                
+                <a href="/2019/04/03/20190403/" class="post-title-link" itemprop="url">二手市场初体验</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Publicado el</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-03T11:49:36+08:00">
-                2019-04-03
-              </time>
+
+              
+                
+              
+
+              <time title="Creado por: 2019-04-03 11:49:36" itemprop="dateCreated datePublished" datetime="2019-04-03T11:49:36+08:00">2019-04-03</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Editado el</span>
+                
+                <time title="Modificado por: 2019-04-15 13:11:55" itemprop="dateModified" datetime="2019-04-15T13:11:55+08:00">2019-04-15</time>
+              
             
           </span>
 
@@ -557,15 +831,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/03/20190403/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/03/20190403/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -593,24 +858,25 @@
       
         
           
-          最近家里东西堆积过多，准备清理一下，试着在网上二手市场叫卖一下，想着也能创手一笔。想起大学的时候，临近毕业了，楼道的公告栏里总会贴出许多宿舍的售卖清单，花花绿绿，粗粗细细的字体，甚是可爱，多是一些衣服、包、杂志书籍之类的，大约是受学校附近夜市的感染和启发。清理之后，多出的书卖给了多抓鱼，寄运方便，根
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/03/20190403/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>最近家里东西堆积过多，准备清理一下，试着在网上二手市场叫卖一下，想着也能创手一笔。想起大学的时候，临近毕业了，楼道的公告栏里总会贴出许多宿舍的售卖清单，花花绿绿，粗粗细细的字体，甚是可爱，多是一些衣服、包、杂志书籍之类的，大约是受学校附近夜市的感染和启发。清理之后，多出的书卖给了多抓鱼，寄运方便，根据品相打款，看在快递的份上贱卖就贱卖了吧，省了不少事也省了一笔开销。另外一些杂物，包、首饰、耳机、明星周边等等挂到了闲鱼。</p>
+<p>闲鱼市场确实热闹蓬勃，东西卖的也比较快，最快的是明星周边，当然得是正当红的，其次是耳机。买家朋友也是五花八门，问价信息风格各异，女性朋友多称呼，高中生喊“小姐姐”，淘宝卖家喊“亲”，大概同龄的喜欢喊“妹子”，男性朋友“包邮？”“全新？”…好不热闹。据数据，2017闲鱼有2亿用户，其中超1600万活跃卖家，超过淘宝卖家。前段时间不少明星在闲鱼卖衣服闹出来的新闻也给闲鱼做了免费宣传。</p>
+
+          
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -641,6 +907,8 @@
 
   
   
+  
+
   
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
@@ -667,25 +935,51 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/02/20190402/" itemprop="url">WTO，银行与房地产</a></h1>
+                
+                <a href="/2019/04/02/20190402/" class="post-title-link" itemprop="url">WTO，银行与房地产</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Publicado el</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-02T16:26:22+08:00">
-                2019-04-02
-              </time>
+
+              
+                
+              
+
+              <time title="Creado por: 2019-04-02 16:26:22" itemprop="dateCreated datePublished" datetime="2019-04-02T16:26:22+08:00">2019-04-02</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Editado el</span>
+                
+                <time title="Modificado por: 2019-04-15 12:55:14" itemprop="dateModified" datetime="2019-04-15T12:55:14+08:00">2019-04-15</time>
+              
             
           </span>
 
@@ -693,15 +987,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/02/20190402/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/02/20190402/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -729,24 +1014,32 @@
       
         
           
-          读到耐大十几年前博文，提到外资银行入华的事情。根据中国入世的承诺，2006年12月是外资银行进入中国（即中国银行业对外开放）的最后期限。她认为，外资银行入华是“轻装上市”，因没有国有银行那些因房市泡沫产生的恶性放贷包袱，也无需因地方政府行政干预而放贷救市，所以理应更具优势，易吸引储户搬家，自主选择优
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/02/20190402/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>读到耐大十几年前博文，提到外资银行入华的事情。根据中国入世的承诺，2006年12月是外资银行进入中国（即中国银行业对外开放）的最后期限。她认为，外资银行入华是“轻装上市”，因没有国有银行那些因房市泡沫产生的恶性放贷包袱，也无需因地方政府行政干预而放贷救市，所以理应更具优势，易吸引储户搬家，自主选择优良资产放贷，形成良性循环。</p>
+<p>原来国内的房地产泡沫并不是近些年才产生的，而是自2000年后，从一线城市开始蔓延开，房价持续高速上涨，房地产业建设过度，所以现在能看到很多“空城”。耐大也指出，房地产铁三角（政府、开发商、银行）谁都不希望房价回落甚至楼市泡沫破灭，否则开发商破产，银行放给开发商的贷款只剩下一堆钢筋水泥，坏账增加。</p>
+<p>13年之后的今天看来，外资银行并没有太多出现在百姓的日常生活中，也没有出现外资银行进入而导致国有银行入不敷出没钱放贷的情况。四大国有银行因为盈利高top所有其它行业而上了微博热搜（<em>2018年六大行净盈利1.06万亿，换算成日赚，工商银行日均净盈利8.16亿，建设银行日均净盈利近7亿，农业银行日均净盈利为5.6亿，中国银行日均净盈利近5亿，交通银行日均净盈利2亿，邮储银行日均净盈利1.43亿</em>）,房地产市场泡沫还未破裂，交易量时增时减，伴随着房产税时不时要出台的真假消息。</p>
+<p>P.S.</p>
+<h3 id="世贸组织（WTO）是个什么组织？"><a href="#世贸组织（WTO）是个什么组织？" class="headerlink" title="世贸组织（WTO）是个什么组织？"></a>世贸组织（WTO）是个什么组织？</h3><blockquote>
+<p>124个国家在1994年4月15日签订的马拉喀什协定（Marrakesh Agreement）中提到于1995年1月1日成立WTO，用于规范国际贸易。WTO也是原关税与贸易总协定（GATT，成立于1948年）的替代组织。</p>
+</blockquote>
+<p><em>GATT成立于1947年，1948年开始生效，由23个国家签订（包括中华民国），1998年发展为128个国家，并改为WTO。GATT/WTO至今共历经9轮磋商谈判，最后一轮始于2001年的多哈回合贸易谈判未能达成协议，2008年宣布破局。</em></p>
+<p>GATT/WTO组织最重要的两大的作用是监管协议的实施、管理和运作以及提供论坛作为贸易磋商和解决贸易争端的场所。</p>
+<h3 id="中国加入世贸组织（WTO）时做了哪些承诺？"><a href="#中国加入世贸组织（WTO）时做了哪些承诺？" class="headerlink" title="中国加入世贸组织（WTO）时做了哪些承诺？"></a>中国加入世贸组织（WTO）时做了哪些承诺？</h3>
+          
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -779,6 +1072,8 @@
   
   
 
+  
+
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
   
   
@@ -803,25 +1098,51 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/04/01/20190401/" itemprop="url">努力，再出发！</a></h1>
+                
+                <a href="/2019/04/01/20190401/" class="post-title-link" itemprop="url">努力，再出发！</a>
+              
+            
+          </h1>
         
 
         <div class="post-meta">
           <span class="post-time">
+
+            
+            
+            
+
             
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Publicado el</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-01T23:35:56+08:00">
-                2019-04-01
-              </time>
+
+              
+                
+              
+
+              <time title="Creado por: 2019-04-01 23:35:56" itemprop="dateCreated datePublished" datetime="2019-04-01T23:35:56+08:00">2019-04-01</time>
             
 
             
+              
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Editado el</span>
+                
+                <time title="Modificado por: 2019-04-04 11:25:18" itemprop="dateModified" datetime="2019-04-04T11:25:18+08:00">2019-04-04</time>
+              
             
           </span>
 
@@ -829,15 +1150,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/04/01/20190401/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/04/01/20190401/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
@@ -865,29 +1177,28 @@
       
         
           
-          
-昔者庄周梦为胡蝶， 栩栩然胡蝶也，自喻适志与！不知周也。俄然觉，则蘧蘧然周也。不知周之梦为胡蝶与，胡蝶之梦为周与？(南怀瑾. 庄子諵譁,Kindle 版本. )
+            <blockquote>
+<p>昔者庄周梦为胡蝶， 栩栩然胡蝶也，自喻适志与！不知周也。俄然觉，则蘧蘧然周也。不知周之梦为胡蝶与，胡蝶之梦为周与？(南怀瑾. 庄子諵譁,Kindle 版本. )</p>
+</blockquote>
+<p>黄河之水 大江东去<br>今早雨中晨跑 方知春<br>开博 以记</p>
+<p>感谢遇到的人们！</p>
 
-黄河之水 大江东去今早雨中晨跑 方知春开博 以记
-感谢遇到的人们！
-
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/01/20190401/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
+
+    
+
     
     
     
 
     
 
+    
+      
+    
     
 
     
@@ -920,9 +1231,6 @@
           </div>
           
 
-
-          
-
         </div>
         
           
@@ -936,54 +1244,57 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Hui Zhuang</p>
-              <p class="site-description motion-element" itemprop="description"></p>
+              <div class="site-description motion-element" itemprop="description"></div>
           </div>
 
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
+          
+            <nav class="site-state motion-element">
               
-                <a href="/archives">
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">entradas</span>
+                  </a>
+                </div>
               
-                  <span class="site-state-item-count">5</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
             
-
-            
-
-            
-
-          </nav>
-
           
-
-          
-
-          
-          
-
-          
-          
-
           
 
         </div>
-      </section>
+      </div>
 
       
 
@@ -991,6 +1302,7 @@
 
     </div>
   </aside>
+  
 
 
         
@@ -1000,16 +1312,18 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
+  <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Hui Zhuang</span>
 
   
+
+  
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Creado mediante <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -1017,12 +1331,13 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+  <div class="theme-info">Tema – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.0</div>
 
 
 
 
         
+
 
 
 
@@ -1043,11 +1358,14 @@
 
     
 
+    
+
+    
   </div>
 
   
 
-<script type="text/javascript">
+<script>
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
@@ -1061,100 +1379,11 @@
 
 
 
-  
 
 
 
 
 
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-    
-      <script id="dsq-count-scr" src="https://.disqus.com/count.js" async></script>
-    
-
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
 
 
 
@@ -1168,7 +1397,51 @@
 
 
   
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
 
 
 
@@ -1180,6 +1453,19 @@
   
 
   
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
   
 
   
