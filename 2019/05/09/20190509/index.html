@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans,en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '7.1.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Hash Function一类将任意长度输入压缩成更短输出的函数。经典应用包括，数据结构中的hash table，可实现$\bigO(1)$复杂度查找。（collison越少，效率越高） hash function是random function吗？hash function in cryptography one-wayness collision resistance  Keyed hash">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Merkle-Damgard Hashing Paradigm">
+<meta property="og:url" content="https://hzhspace.github.io/2019/05/09/20190509/index.html">
+<meta property="og:site_name" content="Pseudorandom Bits">
+<meta property="og:description" content="Hash Function一类将任意长度输入压缩成更短输出的函数。经典应用包括，数据结构中的hash table，可实现$\bigO(1)$复杂度查找。（collison越少，效率越高） hash function是random function吗？hash function in cryptography one-wayness collision resistance  Keyed hash">
+<meta property="og:locale" content="zh-Hans,en">
+<meta property="og:updated_time" content="2019-06-20T09:09:15.809Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Merkle-Damgard Hashing Paradigm">
+<meta name="twitter:description" content="Hash Function一类将任意长度输入压缩成更短输出的函数。经典应用包括，数据结构中的hash table，可实现$\bigO(1)$复杂度查找。（collison越少，效率越高） hash function是random function吗？hash function in cryptography one-wayness collision resistance  Keyed hash">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://hzhspace.github.io/2019/05/09/20190509/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Merkle-Damgard Hashing Paradigm | Pseudorandom Bits</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans,en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Pseudorandom Bits</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Navigationsleiste an/ausschalten">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://hzhspace.github.io/2019/05/09/20190509/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hui Zhuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Pseudorandom Bits">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Merkle-Damgard Hashing Paradigm
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+
+              
+                
+              
+
+              <time title="Erstellt: 2019-05-09 11:57:03" itemprop="dateCreated datePublished" datetime="2019-05-09T11:57:03+08:00">2019-05-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Bearbeitet am</span>
+                
+                <time title="Geändert am: 2019-06-20 17:09:15" itemprop="dateModified" datetime="2019-06-20T17:09:15+08:00">2019-06-20</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Hash-Function"><a href="#Hash-Function" class="headerlink" title="Hash Function"></a>Hash Function</h2><p>一类将任意长度输入压缩成更短输出的函数。经典应用包括，数据结构中的hash table，可实现$\bigO(1)$复杂度查找。（<em>collison越少，效率越高</em>）</p>
+<h2 id="hash-function是random-function吗？"><a href="#hash-function是random-function吗？" class="headerlink" title="hash function是random function吗？"></a>hash function是random function吗？</h2><h2 id="hash-function-in-cryptography"><a href="#hash-function-in-cryptography" class="headerlink" title="hash function in cryptography"></a>hash function in cryptography</h2><ol>
+<li>one-wayness</li>
+<li>collision resistance</li>
+</ol>
+<h2 id="Keyed-hash-function"><a href="#Keyed-hash-function" class="headerlink" title="Keyed hash function"></a>Keyed hash function</h2><ol>
+<li>$\textbf{Gen}(1^\lambda)\rightarrow s$: 随机算法，产生密钥s。</li>
+<li>$\textbf{H}(s,m)\rightarrow H^s(m)$: 确定性算法，$m\in\{0,1\}^$,即输入可为任意长度， 输出$H^s(m)\in\{0,1\}^{\ell(n)}$。</li>
+</ol>
+<h2 id="Definition-of-collision-resistance"><a href="#Definition-of-collision-resistance" class="headerlink" title="Definition of collision-resistance"></a>Definition of collision-resistance</h2><h2 id="Universal-hash-function"><a href="#Universal-hash-function" class="headerlink" title="Universal hash function"></a>Universal hash function</h2><h2 id="keyed-hash-function是pseudorandom-function吗？"><a href="#keyed-hash-function是pseudorandom-function吗？" class="headerlink" title="keyed hash function是pseudorandom function吗？"></a>keyed hash function是pseudorandom function吗？</h2><h2 id="Merkel-Damgard-Transform"><a href="#Merkel-Damgard-Transform" class="headerlink" title="Merkel-Damgard Transform"></a>Merkel-Damgard Transform</h2><p>将一个确定输入长度的collison-resistant hash function转换为任意输入长度的collison-resistant hash function。</p>
+<p>偶像颜宁</p>
+<p>我的价值观里，一个好演员、好老师、好研究人员是什么样呢？外表上，绝不应该有一个什么标准，因为个性永远应该是任何优秀的人需要保留的，而个性一定不同。</p>
+<p>优秀的人一定是想得深，想得远，想得广，及他人所不及，敏锐感知，聪明应对。</p>
+<p>FT： faint，晕<br>CHO：chief忽悠offier（猜的）<br>xdjm: 兄弟姐妹<br>nsdd：你说的对</p>
+<p>mitbbs<br>万维网<br>bbsland</p>
+<p>1) 这么坦荡的人，会不会有“迫不得已”“违心”的情况？<br>2）她也很幽默，她对于度的把握<br>3）科研和上课存在冲突</p>
+<p>张楚<br>《西出阳关》</p>
+<p>90年代精神弱化 物质对比突出 </p>
+<p>在这一年的北京，魔岩文化发行了三张专辑：窦唯的《黑梦》，何勇的《垃圾场》，张楚的《孤独的人是可耻的》。</p>
+<p>按照台湾人的搞法，这三个人被合称为魔岩三杰。其实就跟小虎队一样，是个宣传的噱头。也是淘汰了一些在当时很有名的摇滚艺术家，才选出的他们仨。</p>
+<p>至于淘汰了谁，你猜。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/16/20190416/" rel="next" title="生日快乐！">
+                <i class="fa fa-chevron-left"></i> 生日快乐！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/05/20190605/" rel="prev" title="LLL reduction/KZ reduction">
+                LLL reduction/KZ reduction <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Hui Zhuang</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">Artikel</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash-Function"><span class="nav-number">1.</span> <span class="nav-text">Hash Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash-function是random-function吗？"><span class="nav-number">2.</span> <span class="nav-text">hash function是random function吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash-function-in-cryptography"><span class="nav-number">3.</span> <span class="nav-text">hash function in cryptography</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keyed-hash-function"><span class="nav-number">4.</span> <span class="nav-text">Keyed hash function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Definition-of-collision-resistance"><span class="nav-number">5.</span> <span class="nav-text">Definition of collision-resistance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Universal-hash-function"><span class="nav-number">6.</span> <span class="nav-text">Universal hash function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keyed-hash-function是pseudorandom-function吗？"><span class="nav-number">7.</span> <span class="nav-text">keyed hash function是pseudorandom function吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merkel-Damgard-Transform"><span class="nav-number">8.</span> <span class="nav-text">Merkel-Damgard Transform</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hui Zhuang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.0"></script>
+
+  <script src="/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.0"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
