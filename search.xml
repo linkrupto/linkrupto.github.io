@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>test</title>
+      <link href="/2019/08/21/test/"/>
+      <url>/2019/08/21/test/</url>
+      
+        <content type="html"><![CDATA[<p>test!</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>政府隐私</title>
+      <link href="/2019/07/09/20190709/"/>
+      <url>/2019/07/09/20190709/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>涉及国家秘密或公开后可能危及国家安全、公共安全、经济安全和社会稳定的政府信息，不属于公开范围。</p></blockquote><p>国家安全：<br>公共安全：<br>经济安全：<br>社会稳定：</p><p>科教<br>文化、广电、新闻出版（言论自由度、意识形态）<br>安全生产监管（食品安全、假冒伪劣）</p><p>学会技能：</p><p>城市生活自救指南：<br>急救<br>火灾<br>广大市民在日常工作、生活中遇到火灾要积极开展自救，切勿盲目逃生。火灾发生时如果所处位置在着火层以下，要立即利用疏散楼梯下到安全地带，注意不要乘坐电梯，因为发生火灾时随时可能断电，另外电梯口通向大楼各层，烟气涌入电梯通道易形成“烟囱效应”，随时会被浓烟毒气熏死；如果所处位置在着火层，先用手背轻触房门，如果已经发热，则说明大火或烟雾已经封锁房门，此时切不可轻易开门，要用毛巾、被子等堵塞门缝，并泼水降温。同时，可用色彩亮丽的衣服或布向窗户外晃动求救。（楚天都市报）<br>地震<br>电梯事故<br>高空抛物<br>大型狗</p><p>正常健康人体是否需要益生菌？</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>教育应该是什么样的？</title>
+      <link href="/2019/06/30/20190630/"/>
+      <url>/2019/06/30/20190630/</url>
+      
+        <content type="html"><![CDATA[<p>我们倒过来看吧，社会需要什么样的人？</p><p>人才是分层的吗？还是不是？是如果分层，是根据能力大小分吗？是根据知识储备量分吗？<br>我的理想状态是各尽其职，每个人都有自己的生存空间和贡献空间，每个人首先从自己的内心出发，满足自己。（杀人犯呢？）<br>我不认为人在整个人类社会中有一个可以明确标注的“绝对位置”，所以“更进一步”的目标也不可定义。</p><p>我一直在怀疑人的天赋说，我更相信后天的环境对人的塑造和影响。如果把一些基础阶段的优势归结为“天赋”，我可以允许使用这个词。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>20190623</title>
+      <link href="/2019/06/23/20190623/"/>
+      <url>/2019/06/23/20190623/</url>
+      
+        <content type="html"><![CDATA[<p>大概是什么时侯，不大也不小，我在心理嘀咕，我是不是太好了，这么好是不是不对，不要这么好吧，够了吧，有点尴尬，我这样才是对的啊，我希望我是这样。</p><p>也是不大不小的时侯，我在心里问自己，不优秀不考高分又能怎样呢，现在想想，我从什么时侯开始养成了不敢表达自己内心疑惑的习惯的，我怕我不够善良，不够匹配世俗的道德诉求，可那只是疑问。</p><p>自己的疑惑一定要表达，要解决，观点和想法不需要。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Adi Shamir</title>
+      <link href="/2019/06/20/Adi-Shamir/"/>
+      <url>/2019/06/20/Adi-Shamir/</url>
+      
+        <content type="html"><![CDATA[<h1 id="How-to-share-a-secret-s"><a href="#How-to-share-a-secret-s" class="headerlink" title="How to share a secret s?"></a>How to share a secret <em>s</em>?</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>怎样把s分成n份，使得任意不少于t份组合，能恢复出s？</p><h3 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h3><p>《组合数学》（Chung Laung Liu，刘炯朗，台湾清华大学校长）中的一个数学问题：</p><blockquote><p>Eleven scientists are working on a secret project. They wish to lock up the documents in a cabinet so that the cabinet can be opened if and only if six or more of the scientists are present. What is the smallest number of locks needed? What is the smallest number of keys to the locks each scientist must carry?</p></blockquote><h4 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h4><p>The whole set is U (|U|=m), divided into 11 subsets and each is of size n, s.t. only the union of any six or more sub-sests can recover the whole set U. Give m,n.</p><h4 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h4><p>1)Any less than six set will not know at least one element in U.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>WTO，银行与房地产</title>
+      <link href="/2019/04/02/20190402/"/>
+      <url>/2019/04/02/20190402/</url>
+      
+        <content type="html"><![CDATA[<p>读到耐大十几年前博文，提到外资银行入华的事情。根据中国入世的承诺，2006年12月是外资银行进入中国（即中国银行业对外开放）的最后期限。她认为，外资银行入华是“轻装上市”，因没有国有银行那些因房市泡沫产生的恶性放贷包袱，也无需因地方政府行政干预而放贷救市，所以理应更具优势，易吸引储户搬家，自主选择优良资产放贷，形成良性循环。</p><p>原来国内的房地产泡沫并不是近些年才产生的，而是自2000年后，从一线城市开始蔓延开，房价持续高速上涨，房地产业建设过度，所以现在能看到很多“空城”。耐大也指出，房地产铁三角（政府、开发商、银行）谁都不希望房价回落甚至楼市泡沫破灭，否则开发商破产，银行放给开发商的贷款只剩下一堆钢筋水泥，坏账增加。</p><p>13年之后的今天看来，外资银行并没有太多出现在百姓的日常生活中，更没有出现外资银行进入而导致国有银行入不敷出没钱放贷的情况，并且四大国有银行因为盈利高到超过所有其它行业而上了微博热搜（<em>2018年六大行净盈利1.06万亿，换算成日赚，工商银行日均净盈利8.16亿，建设银行日均净盈利近7亿，农业银行日均净盈利为5.6亿，中国银行日均净盈利近5亿，交通银行日均净盈利2亿，邮储银行日均净盈利1.43亿</em>）,房地产市场泡沫还未破裂，交易量时增时减，伴随着房产税时不时要出台的消息。</p><p>P.S.</p><h3 id="世贸组织（WTO）是个什么组织？"><a href="#世贸组织（WTO）是个什么组织？" class="headerlink" title="世贸组织（WTO）是个什么组织？"></a>世贸组织（WTO）是个什么组织？</h3><blockquote><p>124个国家在1994年4月15日签订的马拉喀什协定（Marrakesh Agreement）中提到于1995年1月1日成立WTO，用于规范国际贸易。WTO也是原关税与贸易总协定（GATT，成立于1948年）的替代组织。</p></blockquote><p><em>GATT成立于1947年，1948年开始生效，由23个国家签订（包括中华民国），1998年发展为128个国家，并改为WTO。GATT/WTO至今共历经9轮磋商谈判，最后一轮始于2001年的多哈回合贸易谈判未能达成协议，2008年宣布破局。</em></p><p>GATT/WTO组织最重要的两大的作用是监管协议的实施、管理和运作以及提供论坛作为贸易磋商和解决贸易争端的场所。</p><h3 id="中国加入世贸组织（WTO）时做了哪些承诺？"><a href="#中国加入世贸组织（WTO）时做了哪些承诺？" class="headerlink" title="中国加入世贸组织（WTO）时做了哪些承诺？"></a>中国加入世贸组织（WTO）时做了哪些承诺？</h3>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>努力，再出发！</title>
+      <link href="/2019/04/01/20190401/"/>
+      <url>/2019/04/01/20190401/</url>
+      
+        <content type="html"><![CDATA[<p>那天，我做了一个梦。记得在梦里，我们变回了幼儿园的小朋友，被老师们强制要求午睡。我似总有耗不完的精力，可就是不敢跟老师撒泼任性，暗暗装睡骗过了老师，醒来想偷偷摇醒旁边的小朋友，可怎么都没有人醒来和我一起玩，环顾一片，我似乎看到整个教室里每个小床里睡得很香的他们，不忍更是不敢再喧哗。</p><p>醒来清晨，细雨，晨练后看着树上的新绿，再看地毯一样的草坪，才觉得是春天了。</p><p>我以为动念，总是起于想要做一件了不起的事。这次，我一动念，想写自己的博客，想象着肆意书写自己的成长，至少坚持他个10年，也真算是一件不枉生的事儿。想想耐大的博客活了8年，Jon的博客活了6年，Nieng的博客活了8年。似乎我觉得他们都是了不起的人，而我也想跟他们一样。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
